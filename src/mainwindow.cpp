@@ -3709,17 +3709,18 @@ void MainWindow::applyIconTheme()
                        qApp->palette().color(QPalette::Window).lightness() < 128);
 
     // Toolpalette checked/hover style
-    if (dark) {
-        ui->dockWidgetContentsToolpalette->setStyleSheet(
-            "QToolButton { border: none; }"
-            "QToolButton:hover   { background: #555; border-radius:4px; border: 1px solid #666; }"
-            "QToolButton:checked { background: #555; border-radius:4px; border: 1px solid #444; }");
-    } else {
-        ui->dockWidgetContentsToolpalette->setStyleSheet(
-            "QToolButton { border: none; }"
-            "QToolButton:hover   { background: #ddd; border-radius:4px; border: 1px solid #eee; }"
-            "QToolButton:checked { background: #ddd; border-radius:4px; border: 1px solid #c0c2c2; }");
-    }
+    const QString darkToolButtonStyle =
+        "QToolButton { border: none; }"
+        "QToolButton:hover   { background: #555; border-radius:4px; border: 1px solid #666; }"
+        "QToolButton:checked { background: #555; border-radius:4px; border: 1px solid #444; }";
+    const QString lightToolButtonStyle =
+        "QToolButton { border: none; }"
+        "QToolButton:hover   { background: #ddd; border-radius:4px; border: 1px solid #eee; }"
+        "QToolButton:checked { background: #ddd; border-radius:4px; border: 1px solid #c0c2c2; }";
+    const QString &toolButtonStyle = dark ? darkToolButtonStyle : lightToolButtonStyle;
+
+    ui->dockWidgetContentsToolpalette->setStyleSheet(toolButtonStyle);
+    ui->dockWidgetContents->setStyleSheet(toolButtonStyle);
     // Toolbar 1 actions
     ui->actionNew->setIcon(QIcon(iconPath(":/icons/assets/icons/toolbar1/new.png", dark)));
     ui->actionOpen->setIcon(QIcon(iconPath(":/icons/assets/icons/toolbar1/open.png", dark)));

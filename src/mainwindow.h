@@ -293,7 +293,7 @@ private:
     Ui::MainWindow *ui;
     QString m_toolSelected;
     QString m_previousToolSelected;
-    PointerSettingsWidget *m_ptSettingsWidget;
+    PointerSettingsWidget *m_ptSettingsWidget = nullptr;
     PaintBrushSettingsWidget *m_pbSettingsWidget;
     PaintBrushAdvSettingsWidget *m_pbAdvSettingsWidget;
     SprayCanSettingsWidget *m_scSettingsWidget;
