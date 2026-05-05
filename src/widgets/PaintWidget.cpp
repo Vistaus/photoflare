@@ -355,10 +355,14 @@ public:
 
     void disconnectLastTool()
     {
-        Q_ASSERT( QObject::disconnect(lastConnection) );
-        Q_ASSERT( QObject::disconnect(lastOverlayConnection) );
-        Q_ASSERT( QObject::disconnect(cursorConnection) );
-        Q_ASSERT( QObject::disconnect(selectionConnection) );
+        QObject::disconnect(lastConnection);
+        QObject::disconnect(lastOverlayConnection);
+        QObject::disconnect(cursorConnection);
+        QObject::disconnect(selectionConnection);
+        lastConnection = {};
+        lastOverlayConnection = {};
+        cursorConnection = {};
+        selectionConnection = {};
     }
 
     void mousePressEvent(QGraphicsSceneMouseEvent *event)
