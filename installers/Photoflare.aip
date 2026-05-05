@@ -5,7 +5,7 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
-    <ROW Property="AI_CURRENT_YEAR" Value="2022" ValueLocId="-"/>
+    <ROW Property="AI_CURRENT_YEAR" Value="2026" ValueLocId="-"/>
     <ROW Property="AI_EXTERNALUIUNINSTALLERNAME" MultiBuildValue="DefaultBuild:aiui"/>
     <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
     <ROW Property="AI_FrameBtnsColor" Value="powderblue" MultiBuildValue="DefaultBuild:aquamarine" MsiKey="AI_FrameBtnsColor"/>
@@ -19,13 +19,14 @@
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
     <ROW Property="ARPNOREPAIR" Value="1" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPPRODUCTICON" Value="PhotoFlare_1.exe"/>
     <ROW Property="ARPSYSTEMCOMPONENT" Value="1"/>
     <ROW Property="ARPURLINFOABOUT" Value="https://photoflare.io"/>
     <ROW Property="Manufacturer" Value="Photoflare.io"/>
-    <ROW Property="ProductCode" Value="1033:{88BD42D5-8EA1-48B3-B685-FBC8CB736993} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{F2A1C3D4-E5B6-7890-ABCD-EF1234567890} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Photoflare"/>
-    <ROW Property="ProductVersion" Value="1.6.12.0" Options="16"/>
+    <ROW Property="ProductVersion" Value="1.7.0.0" Options="16"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
     <ROW Property="UpgradeCode" Value="{5DFB1CEA-0740-4E8A-9CE9-D5A82084C960}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -46,14 +47,17 @@
     <ROW Directory="Spring.742DA8B7_Dir" Directory_Parent="ProductCode_Dir" DefaultDir="SPRING~1.742|Spring.742DA8B7" DefaultDirLocId="-"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
     <ROW Directory="TempFolder" Directory_Parent="TARGETDIR" DefaultDir="TEMPFO~1|TempFolder" IsPseudoRoot="1"/>
-    <ROW Directory="data_Dir" Directory_Parent="APPDIR" DefaultDir="data"/>
+    <ROW Directory="iconengines_Dir" Directory_Parent="APPDIR" DefaultDir="ICONEN~1|iconengines"/>
     <ROW Directory="imageformats_Dir" Directory_Parent="APPDIR" DefaultDir="IMAGEF~1|imageformats"/>
-    <ROW Directory="languages_Dir" Directory_Parent="data_Dir" DefaultDir="LANGUA~1|languages"/>
+    <ROW Directory="languages_Dir" Directory_Parent="APPDIR" DefaultDir="LANGUA~1|languages"/>
+    <ROW Directory="networkinformation_Dir" Directory_Parent="APPDIR" DefaultDir="NETWOR~1|networkinformation"/>
     <ROW Directory="platforms_Dir" Directory_Parent="APPDIR" DefaultDir="PLATFO~1|platforms"/>
+    <ROW Directory="plugins_Dir" Directory_Parent="APPDIR" DefaultDir="plugins"/>
     <ROW Directory="pngfix_Dir" Directory_Parent="Spring.742DA8B7_Dir" DefaultDir="pngfix" DefaultDirLocId="-"/>
-    <ROW Directory="printsupport_Dir" Directory_Parent="APPDIR" DefaultDir="PRINTS~1|printsupport"/>
     <ROW Directory="progress_Dir" Directory_Parent="Spring.742DA8B7_Dir" DefaultDir="progress" DefaultDirLocId="-"/>
     <ROW Directory="styles_Dir" Directory_Parent="APPDIR" DefaultDir="styles"/>
+    <ROW Directory="tls_Dir" Directory_Parent="APPDIR" DefaultDir="tls"/>
+    <ROW Directory="translations_Dir" Directory_Parent="APPDIR" DefaultDir="TRANSL~1|translations"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="AI_CustomARPName" ComponentId="{E5AD7748-8D18-4017-8401-AE294A2775D7}" Directory_="APPDIR" Attributes="260" KeyPath="DisplayName" Options="1"/>
@@ -177,11 +181,15 @@
     <ROW Component="IM_MOD_RL_yuv_.dll" ComponentId="{81FF1D83-E3D6-4FE0-AC64-7092987F099A}" Directory_="APPDIR" Attributes="256" KeyPath="IM_MOD_RL_yuv_.dll"/>
     <ROW Component="PhotoFlare.exe" ComponentId="{CE99A836-A332-41B7-8CEA-B64304A84B03}" Directory_="APPDIR" Attributes="256" KeyPath="PhotoFlare.exe"/>
     <ROW Component="ProductInformation" ComponentId="{1D65AC3D-F912-4D07-86A8-9BC9D948D9E9}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
-    <ROW Component="Qt5Core.dll" ComponentId="{8E80789F-5524-41FC-B938-346E637F7924}" Directory_="APPDIR" Attributes="256" KeyPath="Qt5Core.dll"/>
-    <ROW Component="Qt5Gui.dll" ComponentId="{BBC92AA9-EC05-455D-AA49-443D7AFFFFEF}" Directory_="APPDIR" Attributes="256" KeyPath="Qt5Gui.dll"/>
-    <ROW Component="Qt5Network.dll" ComponentId="{E0F6A1DC-217B-4723-BAE1-3C14580DF378}" Directory_="APPDIR" Attributes="256" KeyPath="Qt5Network.dll"/>
-    <ROW Component="Qt5PrintSupport.dll" ComponentId="{87D368C3-FC22-42EB-8920-0B8FF2B6B50C}" Directory_="APPDIR" Attributes="256" KeyPath="Qt5PrintSupport.dll"/>
-    <ROW Component="Qt5Widgets.dll" ComponentId="{07B075E8-B7DA-4A33-9C84-519A9EDC925B}" Directory_="APPDIR" Attributes="256" KeyPath="Qt5Widgets.dll"/>
+    <ROW Component="D3Dcompiler_47.dll" ComponentId="{B2B3B4B5-C2C3-D2D3-E2E3-F2F3F4F5F6F7}" Directory_="APPDIR" Attributes="256" KeyPath="D3Dcompiler_47.dll"/>
+    <ROW Component="gmic_qt.exe" ComponentId="{B1B2B3B4-C1C2-D1D2-E1E2-F1F2F3F4F5F6}" Directory_="APPDIR" Attributes="256" KeyPath="gmic_qt.exe"/>
+    <ROW Component="opengl32sw.dll" ComponentId="{B3B4B5B6-C3C4-D3D4-E3E4-F3F4F5F6F7F8}" Directory_="APPDIR" Attributes="256" KeyPath="opengl32sw.dll"/>
+    <ROW Component="Qt6Core.dll" ComponentId="{A1A2A3A4-B1B2-C1C2-D1D2-E1E2E3E4E5E6}" Directory_="APPDIR" Attributes="256" KeyPath="Qt6Core.dll"/>
+    <ROW Component="Qt6Gui.dll" ComponentId="{A2A3A4A5-B2B3-C2C3-D2D3-E2E3E4E5E6E7}" Directory_="APPDIR" Attributes="256" KeyPath="Qt6Gui.dll"/>
+    <ROW Component="Qt6Network.dll" ComponentId="{A3A4A5A6-B3B4-C3C4-D3D4-E3E4E5E6E7E8}" Directory_="APPDIR" Attributes="256" KeyPath="Qt6Network.dll"/>
+    <ROW Component="Qt6PrintSupport.dll" ComponentId="{A4A5A6A7-B4B5-C4C5-D4D5-E4E5E6E7E8E9}" Directory_="APPDIR" Attributes="256" KeyPath="Qt6PrintSupport.dll"/>
+    <ROW Component="Qt6Svg.dll" ComponentId="{A5A6A7A8-B5B6-C5C6-D5D6-E5E6E7E8E9EA}" Directory_="APPDIR" Attributes="256" KeyPath="Qt6Svg.dll"/>
+    <ROW Component="Qt6Widgets.dll" ComponentId="{A6A7A8A9-B6B7-C6C7-D6D7-E6E7E8E9EAEB}" Directory_="APPDIR" Attributes="256" KeyPath="Qt6Widgets.dll"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{202F0FB9-770D-44E5-8361-5F049171728D}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="de.qm" ComponentId="{CACBDBC9-72E0-4426-9D7C-808AE0E1DBBF}" Directory_="languages_Dir" Attributes="0" KeyPath="de.qm" Type="0"/>
     <ROW Component="qgif.dll" ComponentId="{18BC4281-B02D-41E2-BB0C-2E83D0FC38ED}" Directory_="imageformats_Dir" Attributes="256" KeyPath="qgif.dll"/>
@@ -195,17 +203,19 @@
     <ROW Component="qwbmp.dll" ComponentId="{A4197EF2-79E3-4AD0-A06E-F0BBE967F9AB}" Directory_="imageformats_Dir" Attributes="256" KeyPath="qwbmp.dll"/>
     <ROW Component="qwebp.dll" ComponentId="{54D6EFC0-1C85-4500-B07F-7C9275EA1AAF}" Directory_="imageformats_Dir" Attributes="256" KeyPath="qwebp.dll"/>
     <ROW Component="qwindows.dll" ComponentId="{5121C9C1-4980-4305-B917-25EFB28C38B9}" Directory_="platforms_Dir" Attributes="256" KeyPath="qwindows.dll"/>
-    <ROW Component="qwindowsvistastyle.dll" ComponentId="{EE71A219-4628-4703-80DD-3588D2154F1D}" Directory_="styles_Dir" Attributes="256" KeyPath="qwindowsvistastyle.dll"/>
+    <ROW Component="qmodernwindowsstyle.dll" ComponentId="{EE71A219-4628-4703-80DD-3588D2154F1D}" Directory_="styles_Dir" Attributes="256" KeyPath="qmodernwindowsstyle.dll"/>
+    <ROW Component="grain.json" ComponentId="{C2C3C4C5-D2D3-E2E3-F2F3-A2A3A4A5A6A7}" Directory_="plugins_Dir" Attributes="0" KeyPath="grain.json" Type="0"/>
+    <ROW Component="grain_plugin.dll" ComponentId="{C1C2C3C4-D1D2-E1E2-F1F2-A1A2A3A4A5A6}" Directory_="plugins_Dir" Attributes="256" KeyPath="grain_plugin.dll"/>
+    <ROW Component="qsvgicon.dll" ComponentId="{B4B5B6B7-C4C5-D4D5-E4E5-F4F5F6F7F8F9}" Directory_="iconengines_Dir" Attributes="256" KeyPath="qsvgicon.dll"/>
     <ROW Component="vcomp140.dll" ComponentId="{6A51B338-3E59-4E74-A07B-641357DEFB27}" Directory_="APPDIR" Attributes="256" KeyPath="vcomp140.dll"/>
     <ROW Component="vcruntime140_1.dll" ComponentId="{FC2E1E26-CCF8-4B49-86E1-B37CE27D2C9C}" Directory_="APPDIR" Attributes="256" KeyPath="vcruntime140_1.dll"/>
-    <ROW Component="windowsprintersupport.dll" ComponentId="{6A66529A-34FC-49E4-AF59-9C2350BEDF76}" Directory_="printsupport_Dir" Attributes="256" KeyPath="windowsprintersupport.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainProgram" Title="Main Program" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainProgram"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="PhotoFlare.exe" Component_="PhotoFlare.exe" FileName="PHOTOF~1.EXE|photoflare.exe" Version="1.5.5.0" Attributes="0" SourcePath="PhotoFlare_Win_AIP\PhotoFlare.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="PhotoFlare.exe" Component_="PhotoFlare.exe" FileName="PHOTOF~1.EXE|photoflare.exe" Version="1.7.0.0" Attributes="0" SourcePath="PhotoFlare_Win_AIP\PhotoFlare.exe" SelfReg="false" DigSign="true"/>
     <ROW File="CORE_RL_bzlib_.dll" Component_="CORE_RL_bzlib_.dll" FileName="CORE_R~1.DLL|CORE_RL_bzlib_.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\CORE_RL_bzlib_.dll" SelfReg="false"/>
     <ROW File="CORE_RL_lcms_.dll" Component_="CORE_RL_lcms_.dll" FileName="CORE_R~2.DLL|CORE_RL_lcms_.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\CORE_RL_lcms_.dll" SelfReg="false"/>
     <ROW File="CORE_RL_libxml_.dll" Component_="CORE_RL_libxml_.dll" FileName="CORE_R~3.DLL|CORE_RL_libxml_.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\CORE_RL_libxml_.dll" SelfReg="false"/>
@@ -214,11 +224,15 @@
     <ROW File="CORE_RL_ttf_.dll" Component_="CORE_RL_ttf_.dll" FileName="CORE_R~6.DLL|CORE_RL_ttf_.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\CORE_RL_ttf_.dll" SelfReg="false"/>
     <ROW File="CORE_RL_xlib_.dll" Component_="CORE_RL_xlib_.dll" FileName="CORE_R~7.DLL|CORE_RL_xlib_.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\CORE_RL_xlib_.dll" SelfReg="false"/>
     <ROW File="CORE_RL_zlib_.dll" Component_="CORE_RL_zlib_.dll" FileName="CORE_R~8.DLL|CORE_RL_zlib_.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\CORE_RL_zlib_.dll" SelfReg="false"/>
-    <ROW File="Qt5Core.dll" Component_="Qt5Core.dll" FileName="Qt5Core.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt5Core.dll" SelfReg="false"/>
-    <ROW File="Qt5Gui.dll" Component_="Qt5Gui.dll" FileName="Qt5Gui.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt5Gui.dll" SelfReg="false"/>
-    <ROW File="Qt5Network.dll" Component_="Qt5Network.dll" FileName="QT5NET~1.DLL|Qt5Network.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt5Network.dll" SelfReg="false"/>
-    <ROW File="Qt5PrintSupport.dll" Component_="Qt5PrintSupport.dll" FileName="QT5PRI~1.DLL|Qt5PrintSupport.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt5PrintSupport.dll" SelfReg="false"/>
-    <ROW File="Qt5Widgets.dll" Component_="Qt5Widgets.dll" FileName="QT5WID~1.DLL|Qt5Widgets.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt5Widgets.dll" SelfReg="false"/>
+    <ROW File="D3Dcompiler_47.dll" Component_="D3Dcompiler_47.dll" FileName="D3DCOM~1.DLL|D3Dcompiler_47.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\D3Dcompiler_47.dll" SelfReg="false"/>
+    <ROW File="gmic_qt.exe" Component_="gmic_qt.exe" FileName="gmic_qt.exe" Attributes="0" SourcePath="PhotoFlare_Win_AIP\gmic_qt.exe" SelfReg="false"/>
+    <ROW File="opengl32sw.dll" Component_="opengl32sw.dll" FileName="OPENGL~1.DLL|opengl32sw.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\opengl32sw.dll" SelfReg="false"/>
+    <ROW File="Qt6Core.dll" Component_="Qt6Core.dll" FileName="Qt6Core.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt6Core.dll" SelfReg="false"/>
+    <ROW File="Qt6Gui.dll" Component_="Qt6Gui.dll" FileName="Qt6Gui.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt6Gui.dll" SelfReg="false"/>
+    <ROW File="Qt6Network.dll" Component_="Qt6Network.dll" FileName="QT6NET~1.DLL|Qt6Network.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt6Network.dll" SelfReg="false"/>
+    <ROW File="Qt6PrintSupport.dll" Component_="Qt6PrintSupport.dll" FileName="QT6PRI~1.DLL|Qt6PrintSupport.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt6PrintSupport.dll" SelfReg="false"/>
+    <ROW File="Qt6Svg.dll" Component_="Qt6Svg.dll" FileName="Qt6Svg.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt6Svg.dll" SelfReg="false"/>
+    <ROW File="Qt6Widgets.dll" Component_="Qt6Widgets.dll" FileName="QT6WID~1.DLL|Qt6Widgets.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\Qt6Widgets.dll" SelfReg="false"/>
     <ROW File="qgif.dll" Component_="qgif.dll" FileName="qgif.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\imageformats\qgif.dll" SelfReg="false"/>
     <ROW File="qicns.dll" Component_="qicns.dll" FileName="qicns.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\imageformats\qicns.dll" SelfReg="false"/>
     <ROW File="qico.dll" Component_="qico.dll" FileName="qico.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\imageformats\qico.dll" SelfReg="false"/>
@@ -230,7 +244,7 @@
     <ROW File="qwebp.dll" Component_="qwebp.dll" FileName="qwebp.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\imageformats\qwebp.dll" SelfReg="false"/>
     <ROW File="qminimal.dll" Component_="qminimal.dll" FileName="qminimal.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\platforms\qminimal.dll" SelfReg="false"/>
     <ROW File="qwindows.dll" Component_="qwindows.dll" FileName="qwindows.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\platforms\qwindows.dll" SelfReg="false"/>
-    <ROW File="windowsprintersupport.dll" Component_="windowsprintersupport.dll" FileName="WINDOW~1.DLL|windowsprintersupport.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\printsupport\windowsprintersupport.dll" SelfReg="false"/>
+
     <ROW File="CORE_RL_jbig_.dll" Component_="CORE_RL_jbig_.dll" FileName="CORE_R~9.DLL|CORE_RL_jbig_.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\CORE_RL_jbig_.dll" SelfReg="false"/>
     <ROW File="CORE_RL_jp2_.dll" Component_="CORE_RL_jp2_.dll" FileName="CORE_~10.DLL|CORE_RL_jp2_.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\CORE_RL_jp2_.dll" SelfReg="false"/>
     <ROW File="CORE_RL_jpeg_.dll" Component_="CORE_RL_jpeg_.dll" FileName="CORE_~11.DLL|CORE_RL_jpeg_.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\CORE_RL_jpeg_.dll" SelfReg="false"/>
@@ -353,7 +367,13 @@
     <ROW File="sv.qm" Component_="de.qm" FileName="sv.qm" Attributes="0" SourcePath="PhotoFlare_Win_AIP\languages\sv.qm" SelfReg="false"/>
     <ROW File="zh_CN.qm" Component_="de.qm" FileName="zh_CN.qm" Attributes="0" SourcePath="PhotoFlare_Win_AIP\languages\zh_CN.qm" SelfReg="false"/>
     <ROW File="zh_TW.qm" Component_="de.qm" FileName="zh_TW.qm" Attributes="0" SourcePath="PhotoFlare_Win_AIP\languages\zh_TW.qm" SelfReg="false"/>
-    <ROW File="qwindowsvistastyle.dll" Component_="qwindowsvistastyle.dll" FileName="QWINDO~1.DLL|qwindowsvistastyle.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\styles\qwindowsvistastyle.dll" SelfReg="false"/>
+    <ROW File="ja.qm" Component_="de.qm" FileName="ja.qm" Attributes="0" SourcePath="PhotoFlare_Win_AIP\languages\ja.qm" SelfReg="false"/>
+    <ROW File="ko.qm" Component_="de.qm" FileName="ko.qm" Attributes="0" SourcePath="PhotoFlare_Win_AIP\languages\ko.qm" SelfReg="false"/>
+    <ROW File="tr.qm" Component_="de.qm" FileName="tr.qm" Attributes="0" SourcePath="PhotoFlare_Win_AIP\languages\tr.qm" SelfReg="false"/>
+    <ROW File="grain.json" Component_="grain.json" FileName="GRAIN~1.JSO|grain.json" Attributes="0" SourcePath="PhotoFlare_Win_AIP\plugins\grain.json" SelfReg="false"/>
+    <ROW File="grain_plugin.dll" Component_="grain_plugin.dll" FileName="GRAIN~2.DLL|grain_plugin.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\plugins\grain_plugin.dll" SelfReg="false"/>
+    <ROW File="qsvgicon.dll" Component_="qsvgicon.dll" FileName="qsvgicon.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\iconengines\qsvgicon.dll" SelfReg="false"/>
+    <ROW File="qmodernwindowsstyle.dll" Component_="qmodernwindowsstyle.dll" FileName="QMODER~1.DLL|qmodernwindowsstyle.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\styles\qmodernwindowsstyle.dll" SelfReg="false"/>
     <ROW File="vcruntime140_1.dll" Component_="vcruntime140_1.dll" FileName="VCRUNT~1.DLL|vcruntime140_1.dll" Attributes="0" SourcePath="PhotoFlare_Win_AIP\vcruntime140_1.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
@@ -401,7 +421,7 @@
     <ROW Name="ExternalUICleaner.dll" SourcePath="&lt;AI_CUSTACTS&gt;ExternalUICleaner.dll"/>
     <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
-    <ROW Name="cutout_pro_partner.png" SourcePath="PhotoFlare_Win_AIP\DATA\cutout_pro_partner.png"/>
+    <ROW Name="photoflare_studio_ad.png" SourcePath="PhotoFlare_Win_AIP\DATA\photoflare_studio_ad.png"/>
     <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
     <ROW Name="tempFiles.dll" SourcePath="&lt;AI_CUSTACTS&gt;tempFiles.dll"/>
   </COMPONENT>
@@ -475,9 +495,9 @@
     <ROW Dialog_="OptionalDlg" Control="Cancel" Type="PushButton" X="450" Y="0" Width="0" Height="0" Attributes="2" Text="[ButtonText_Cancel]" Order="300" Options="1"/>
     <ROW Dialog_="OptionalDlg" Control="Back" Type="ImageButton" X="45" Y="323" Width="54" Height="27" Attributes="3" Text="[ButtonImage]" TextStyle="[ButtonTextStyle]" Order="400" ExtType="ImageButton" ExtData="[ButtonText_Back]" ExtDataLocId="-"/>
     <ROW Dialog_="OptionalDlg" Control="Title" Type="Text" X="45" Y="17" Width="200" Height="15" Attributes="196611" Text="Support Us" TextStyle="TitleFont" Order="500"/>
-    <ROW Dialog_="OptionalDlg" Control="Text_1" Type="Text" X="45" Y="39" Width="359" Height="36" Attributes="65539" Property="TEXT_1_PROP" Text="Please support Photoflare development by creating an account with Cutout.pro.  Cutout.pro leverages the power of artificial intelligence and computer vision to deliver a wide range of products that make your life much easier and your work more productive." Order="600"/>
-    <ROW Dialog_="OptionalDlg" Control="more_info" Type="Hyperlink" X="45" Y="75" Width="71" Height="13" Attributes="65539" Property="HYPERLINK_1_PROP_1" Text="&lt;a href=&quot;https://photoflare.io/add-ons/&quot;&gt;More Information&lt;/a&gt;" Order="700"/>
-    <ROW Dialog_="OptionalDlg" Control="Bitmap_1" Type="Bitmap" X="45" Y="98" Width="359" Height="209" Attributes="1" Text="cutout_pro_partner.png" Order="800"/>
+    <ROW Dialog_="OptionalDlg" Control="Text_1" Type="Text" X="45" Y="39" Width="359" Height="36" Attributes="65539" Property="TEXT_1_PROP" Text="Upgrade to PhotoFlare Studio for advanced AI-powered tools, layers, non-destructive editing, and priority support." Order="600"/>
+    <ROW Dialog_="OptionalDlg" Control="more_info" Type="Hyperlink" X="45" Y="78" Width="200" Height="13" Attributes="65539" Property="HYPERLINK_1_PROP_1" Text="&lt;a href=&quot;https://photoflare.io/studio/&quot;&gt;Learn more about PhotoFlare Studio&lt;/a&gt;" Order="700"/>
+    <ROW Dialog_="OptionalDlg" Control="Bitmap_1" Type="Bitmap" X="45" Y="100" Width="359" Height="200" Attributes="1" Text="photoflare_studio_ad.png" Order="800"/>
     <ROW Dialog_="PatchWelcomeDlg" Control="Title" Type="Text" X="45" Y="17" Width="382" Height="30" Attributes="196611" Text="Welcome to the [ProductName] Patch [Wizard]" TextStyle="TitleFont" Order="400" TextLocId="Control.Text.PatchWelcomeDlg#Title" MsiKey="PatchWelcomeDlg#Title"/>
     <ROW Dialog_="PatchWelcomeDlg" Control="Description" Type="Text" X="45" Y="55" Width="360" Height="60" Attributes="196611" Text="The [Wizard] will install the Patch for [ProductName] on your computer.  Click [Text_Next] to continue or close the window to exit the Patch [Wizard]." Order="500" TextLocId="Control.Text.PatchWelcomeDlg#DescriptionNoClose" MsiKey="PatchWelcomeDlg#Description"/>
     <ROW Dialog_="PatchWelcomeDlg" Control="Back" Type="PushButton" X="45" Y="323" Width="56" Height="28" Attributes="2" Text="[ButtonText_Back]" TextStyle="Buttons" Order="600" TextLocId="-" MsiKey="PatchWelcomeDlg#Back" Options="1"/>
@@ -740,11 +760,12 @@
     <ROW Feature_="MainProgram" Component_="IM_MOD_RL_yuv_.dll"/>
     <ROW Feature_="MainProgram" Component_="PhotoFlare.exe"/>
     <ROW Feature_="MainProgram" Component_="ProductInformation"/>
-    <ROW Feature_="MainProgram" Component_="Qt5Core.dll"/>
-    <ROW Feature_="MainProgram" Component_="Qt5Gui.dll"/>
-    <ROW Feature_="MainProgram" Component_="Qt5Network.dll"/>
-    <ROW Feature_="MainProgram" Component_="Qt5PrintSupport.dll"/>
-    <ROW Feature_="MainProgram" Component_="Qt5Widgets.dll"/>
+    <ROW Feature_="MainProgram" Component_="Qt6Core.dll"/>
+    <ROW Feature_="MainProgram" Component_="Qt6Gui.dll"/>
+    <ROW Feature_="MainProgram" Component_="Qt6Network.dll"/>
+    <ROW Feature_="MainProgram" Component_="Qt6PrintSupport.dll"/>
+    <ROW Feature_="MainProgram" Component_="Qt6Svg.dll"/>
+    <ROW Feature_="MainProgram" Component_="Qt6Widgets.dll"/>
     <ROW Feature_="MainProgram" Component_="SHORTCUTDIR"/>
     <ROW Feature_="MainProgram" Component_="de.qm"/>
     <ROW Feature_="MainProgram" Component_="qgif.dll"/>
@@ -759,11 +780,10 @@
     <ROW Feature_="MainProgram" Component_="qwebp.dll"/>
     <ROW Feature_="MainProgram" Component_="qwindows.dll"/>
     <ROW Feature_="MainProgram" Component_="vcomp140.dll"/>
-    <ROW Feature_="MainProgram" Component_="windowsprintersupport.dll"/>
     <ROW Feature_="MainProgram" Component_="APPDIR"/>
     <ROW Feature_="MainProgram" Component_="AI_ExePath"/>
     <ROW Feature_="MainProgram" Component_="AI_CustomARPName"/>
-    <ROW Feature_="MainProgram" Component_="qwindowsvistastyle.dll"/>
+    <ROW Feature_="MainProgram" Component_="qmodernwindowsstyle.dll"/>
     <ROW Feature_="MainProgram" Component_="vcruntime140_1.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
@@ -822,7 +842,7 @@
     <ROW Registry="Comments" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Comments" Value="[ARPCOMMENTS]" Component_="AI_CustomARPName"/>
     <ROW Registry="Contact" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="Contact" Value="[ARPCONTACT]" Component_="AI_CustomARPName"/>
     <ROW Registry="CurrentVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion" Name="\"/>
-    <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[ARP_ICON_PATH]" Component_="AI_CustomARPName"/>
+    <ROW Registry="DisplayIcon" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayIcon" Value="[APPDIR]Photoflare.exe,0" Component_="AI_CustomARPName"/>
     <ROW Registry="DisplayName" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayName" Value="[AI_PRODUCTNAME_ARP]" Component_="AI_CustomARPName"/>
     <ROW Registry="DisplayVersion" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="DisplayVersion" Value="[ProductVersion]" Component_="AI_CustomARPName"/>
     <ROW Registry="EstimatedSize" Root="-1" Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[ProductName] [ProductVersion]" Name="EstimatedSize" Value="#[AI_ARP_SIZE]" Component_="AI_CustomARPName" VirtualValue="#"/>
