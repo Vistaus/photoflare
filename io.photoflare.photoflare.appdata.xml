@@ -38,6 +38,27 @@
   </provides>
   <content_rating type="oars-1.1" />
   <releases>
+    <release version="1.7.0" date="2026-05-05">
+        <description>
+          <ul>
+            <li>Migrated to Qt 6.</li>
+            <li>New canvas engine with improved performance.</li>
+            <li>G'MIC integration for hundreds of advanced filters.</li>
+            <li>Added rulers to the canvas.</li>
+            <li>Added dark icon theme with automatic dark mode detection.</li>
+            <li>New lasso, ellipse and move selection tools.</li>
+            <li>EXIF metadata preserved on save.</li>
+            <li>Paste as new image, scale and rotate pasted images.</li>
+            <li>Resize canvas by percentage.</li>
+            <li>Pan image while zoomed in.</li>
+            <li>Session and layout persistence.</li>
+            <li>Portable mode added.</li>
+            <li>Korean translation added.</li>
+            <li>HiDPI and Wayland support improved.</li>
+            <li>Many bug fixes.</li>
+          </ul>
+        </description>
+    </release>
     <release version="1.6.13" date="2023-10-08">
         <description>
           <ul>
